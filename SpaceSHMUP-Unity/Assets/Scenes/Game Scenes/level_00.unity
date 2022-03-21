@@ -492,7 +492,6 @@ MonoBehaviour:
   defaultHighScore: 1000
   numberOfLives: 3
   resetLostLevel: 1
-  gameRestartDelay: 2
   defaultEndMessage: Game Over
   looseMessage: You Loose
   winMessage: You Win
