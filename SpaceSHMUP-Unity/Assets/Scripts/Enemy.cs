@@ -3,7 +3,7 @@
  * Date Created: March 16, 2022
  * 
  * Last Edited by: Jacob Sharp
- * Last Edited: March 28, 2022
+ * Last Edited: March 30, 2022
  * 
  * Description: Enemy controler
 ****/
@@ -65,5 +65,20 @@ public class Enemy : MonoBehaviour
         Vector3 tempPos = pos;
         tempPos.y -= speed * Time.deltaTime;
         pos = tempPos;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject other = collision.gameObject;
+
+        // When hit by a projectile, increase the score and destroy the projectile and self
+        if (other.tag == "ProjectileHero")
+        {
+            Debug.Log("Enemy hit by projectile " + other.name);
+            Hero.SHIP.AddToScore(score);
+            Destroy(other);
+            Destroy(gameObject);
+        }
+        else Debug.Log("Enemy hit by non-projectile " + other.name);
     }
 }

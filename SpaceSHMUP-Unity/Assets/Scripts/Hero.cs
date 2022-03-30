@@ -44,12 +44,17 @@ public class Hero : MonoBehaviour
     public float rollMult = -45;
     public float pitchMult = 30;
 
+    [Space(10)]
 
+    [Header("Projectile Settings")]
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 40f;
 
     [Space(10)]
 
     private GameObject lastTriggerGo; //reference to the last triggering game object
    
+    [Header("Shield Settings")]
     [SerializeField] //show in inspector
     private float _shieldLevel = 1; //level for shields
     public int maxShield = 4; //maximum shield level
@@ -104,6 +109,12 @@ public class Hero : MonoBehaviour
         // Rotate the ship for a more dynamic feel
         transform.rotation = Quaternion.Euler(yAxis * pitchMult, xAxis * rollMult, 0);
 
+
+        // Fire on space bar input
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TempFire();
+        }
     }//end Update()
 
 
@@ -130,4 +141,15 @@ public class Hero : MonoBehaviour
         }
     }//end OnTriggerEnter()
 
+    void TempFire()
+    {
+        GameObject newProjectile = Instantiate<GameObject>(projectilePrefab, transform.position, Quaternion.Euler(0, 0, 0));
+        Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.up * projectileSpeed;
+    }
+
+    public void AddToScore(int score)
+    {
+        gm.UpdateScore(score);
+    }
 }
