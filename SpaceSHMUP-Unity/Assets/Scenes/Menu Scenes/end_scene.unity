@@ -152,13 +152,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d49296548f6742498c9896ffedace25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 0
   gameTitle: Untitled Game
   gameCredits: Made by Me
   copyrightDate: Copyright 2022
   recordHighScore: 1
   defaultHighScore: 1000
-  numberOfLives: 0
-  levelLost: 0
+  defaultsLives: 0
+  resetLostLevel: 1
+  gameRestartDelay: 2
   defaultEndMessage: Game Over
   looseMessage: You Loose
   winMessage: You Win
@@ -168,8 +170,10 @@ MonoBehaviour:
   gameLevels:
   - level_00
   - level_01
+  gameLevelsCount: 0
+  TestGameManager: 0
+  levelLost: 0
   nextLevel: 0
-  gameState: 0
   playerWon: 0
 --- !u!4 &95156173
 Transform:

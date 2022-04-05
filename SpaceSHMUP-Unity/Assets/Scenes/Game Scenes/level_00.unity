@@ -434,7 +434,8 @@ MonoBehaviour:
   recordHighScore: 1
   defaultHighScore: 1000
   defaultsLives: 3
-  resetLostLevel: 0
+  resetLostLevel: 1
+  gameRestartDelay: 2
   defaultEndMessage: Game Over
   looseMessage: You Loose
   winMessage: You Win
@@ -917,6 +918,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4619192338480905124, guid: a4c6588e02bf0e346b6784d1092bb7af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650417068412078600, guid: a4c6588e02bf0e346b6784d1092bb7af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6650417068716629928, guid: a4c6588e02bf0e346b6784d1092bb7af, type: 3}
       propertyPath: m_RootOrder
       value: 5

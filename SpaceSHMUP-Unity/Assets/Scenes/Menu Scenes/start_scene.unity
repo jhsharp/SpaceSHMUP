@@ -173,7 +173,8 @@ MonoBehaviour:
   recordHighScore: 1
   defaultHighScore: 1000
   defaultsLives: 3
-  resetLostLevel: 0
+  resetLostLevel: 1
+  gameRestartDelay: 2
   defaultEndMessage: Game Over
   looseMessage: You Loose
   winMessage: You Win
