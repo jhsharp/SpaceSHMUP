@@ -2,13 +2,13 @@
  * Created by: Akram Taghavi-Burris
  * Date Created: March 16, 2022
  * 
- * Last Edited by: Jacob Sharp
- * Last Edited: March 30, 2022
+ * Last Edited by: 
+ * Last Edited: 
  * 
  * Description: Enemy controler
 ****/
 
-/** Using Namespaces **/
+/*** Using Namespaces ***/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,7 +46,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+       //Call the Move Method
+
 
         //Check if bounds check exists and the object is off the bottom of the screne
         if(bndCheck != null && bndCheck.offDown)
@@ -58,27 +59,7 @@ public class Enemy : MonoBehaviour
 
     }//end Update()
 
-    //Virtual methods can be overiden by child instances
-    public virtual void Move()
-    {
-        // Move down by the set speed
-        Vector3 tempPos = pos;
-        tempPos.y -= speed * Time.deltaTime;
-        pos = tempPos;
-    }
+    
+    //Virtual methods can be overridden by child instances
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        GameObject other = collision.gameObject;
-
-        // When hit by a projectile, increase the score and destroy the projectile and self
-        if (other.tag == "ProjectileHero")
-        {
-            Debug.Log("Enemy hit by projectile " + other.name);
-            Hero.SHIP.AddToScore(score);
-            Destroy(other);
-            Destroy(gameObject);
-        }
-        else Debug.Log("Enemy hit by non-projectile " + other.name);
-    }
 }
