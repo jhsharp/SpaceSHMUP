@@ -1011,7 +1011,7 @@ MonoBehaviour:
   - {fileID: 777786193082681700, guid: e268d6f1cfa704a4a9402b3743eb1543, type: 3}
   - {fileID: 777786193082681700, guid: 9ef5d6b8208903b43aff3c0b8ae9fc71, type: 3}
   - {fileID: 777786193082681700, guid: 69e7e76dacafc3341871cae34221aeb1, type: 3}
-  enemySpawnPerSecond: 2
+  enemySpawnPerSecond: 3
   enemyDefaultPadding: 0
 --- !u!114 &1626304959
 MonoBehaviour:

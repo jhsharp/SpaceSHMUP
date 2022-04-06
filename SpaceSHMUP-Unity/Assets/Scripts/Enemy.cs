@@ -68,4 +68,20 @@ public class Enemy : MonoBehaviour
         tempPos.y -= speed * Time.deltaTime;
         pos = tempPos;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject other = collision.gameObject;
+        if (other.tag == "ProjectileHero")
+        {
+            Debug.Log("Enemy hit by projectile " + other.name);
+            Hero.SHIP.AddToScore(score); // add to score
+            Destroy(other); // destroy projectile
+            Destroy(gameObject); // destroy enemy
+        }
+        else
+        {
+            Debug.Log("Enemy hit by non-projectile " + other.name);
+        }
+    }
 }
