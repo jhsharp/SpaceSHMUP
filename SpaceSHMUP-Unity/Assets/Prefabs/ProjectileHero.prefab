@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1860078895987562517}
   - component: {fileID: 3061357555883518769}
   - component: {fileID: 3112270640211750507}
+  - component: {fileID: 2101716965019946429}
   m_Layer: 8
   m_Name: ProjectileHero
   m_TagString: ProjectileHero
@@ -167,5 +168,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c44c9830eff1f0942a6c4b236e4952e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2101716965019946429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7342459617132597789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bad5b916e1de642948cf6bd126b044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

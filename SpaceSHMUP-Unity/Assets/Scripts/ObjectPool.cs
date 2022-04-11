@@ -3,7 +3,7 @@
  * Date Created: April 6, 2022
  * 
  * Last Edited by: Jacob Sharp
- * Last Edited: April 6, 2022
+ * Last Edited: April 11, 2022
  * 
  * Description: Create a pool of objects for reuse
 ****/
@@ -36,11 +36,32 @@ public class ObjectPool : MonoBehaviour
 
     void Start()
     {
-        
+        for (int i = 0; i < poolStartSize; i++)
+        {
+            GameObject projectile = Instantiate(projectilePrefab); // create new projectile
+            projectiles.Enqueue(projectile); // add to queue
+            projectile.SetActive(false); // disable in scene
+        }
     }
 
-    void Update()
+    public GameObject GetObject() // get first object in queue
     {
-        
+        if (projectiles.Count > 0)
+        {
+            GameObject obj = projectiles.Dequeue();
+            obj.SetActive(true);
+            return obj;
+        }
+        else
+        {
+            Debug.LogWarning("Out of objects, reloading...");
+            return null;
+        }
+    }
+
+    public void ReturnObject(GameObject obj) // return object to queue
+    {
+        projectiles.Enqueue(obj); // add to queue
+        obj.SetActive(false); // disable
     }
 }

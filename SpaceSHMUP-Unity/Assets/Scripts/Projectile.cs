@@ -23,10 +23,11 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        // delete projectile if it goes offscreen
+        // disable projectile if it goes offscreen
         if (bndCheck.offUp)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            bndCheck.offUp = false; // reset bounds
         }
     }
 }

@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Enemy hit by projectile " + other.name);
             Hero.SHIP.AddToScore(score); // add to score
-            Destroy(other); // destroy projectile
+            other.SetActive(false); // disable projectile
             Destroy(gameObject); // destroy enemy
         }
         else
