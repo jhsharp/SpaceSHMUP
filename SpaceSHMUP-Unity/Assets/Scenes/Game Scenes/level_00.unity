@@ -1264,8 +1264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  gameTitle: Untitled Game
-  gameCredits: Made by Me
+  gameTitle: Space Shooter
+  gameCredits: Jacob Sharp
   copyrightDate: Copyright 2022
   recordHighScore: 1
   defaultHighScore: 1000
